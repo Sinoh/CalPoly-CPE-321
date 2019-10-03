@@ -25,9 +25,9 @@ def decrypt(string, key):
 
     for i in range(len(string)):
         if (string.isupper()):
-            decryption += chr((ord(string[j]) - key[j % len(key)] + 26) % 26 + 65)
+            decryption += chr((ord(string[j]) - ord(key[j % len(key)] + 26)) % 26 + 65)
         elif (string.islower()):
-            decryption += chr((ord(string[j]) - key[j & len(key)] + 26) % 26 + 97)
+            decryption += chr((ord(string[j]) - ord(key[j & len(key)] + 26)) % 26 + 97)
         else:
             decryption += string[i]
             j -= 1
