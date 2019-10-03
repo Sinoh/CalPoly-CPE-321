@@ -72,7 +72,7 @@ def main():
                 count += 1
                 percent = count/pow(26, key_length)
                 if (percent % 1):
-                    print('%0.2f' %(percent), '%')
+                    print(percent, '%')
 
                 
 
