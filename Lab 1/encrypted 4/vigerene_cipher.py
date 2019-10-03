@@ -70,9 +70,9 @@ def main():
                 key = ''.join(combo)
                 decrypt_output.write(decrypt(string, key) + '\n')
                 count += 1
-                percent = count/pow(26, key_length)
+                percent = count/pow(26, key_length) * 100
                 if (percent % 1):
-                    print(percent, '%')
+                    print('%0.2f' %(percent), '%')
 
                 
 
