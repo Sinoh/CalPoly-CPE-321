@@ -32,7 +32,7 @@ def decrypt(string, shift):
 def main():
 
     if (len(sys.argv) != 3):
-        print("Usage: ./caesar_ciper -o[options] input.txt\n")
+        print("Usage: ./caesar_ciper -o[options] input.txt")
         print("Options: -e [encrypt] or -d [decrypt]")
         exit()
 

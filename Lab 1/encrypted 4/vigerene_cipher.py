@@ -1,5 +1,6 @@
 import sys
 import math
+import enchant
 from itertools import product
 
 def encrypt(string, key):
@@ -38,7 +39,8 @@ def decrypt(string, key):
 
 def main():
     alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-
+    dictionary = enchant.Dict('en_US')
+    
     if (len(sys.argv) != 4):
         print("Usage: ./vigerene_ciper [Options1] [Options2] input.txt\n")
         print("Options1: -e [encrypt] or -d [decrypt]")
@@ -64,6 +66,7 @@ def main():
                 for combo in product(alphabets, repeat = length):
                     key = ''.join(combo)
                     decrypt_output.write(decrypt(string, key) + '\n')
+                print((length/26) * 100, '%')
         else:
             count = 0
             for combo in product(alphabets, repeat = key_length):
