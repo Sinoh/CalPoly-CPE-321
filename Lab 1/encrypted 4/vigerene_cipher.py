@@ -65,12 +65,14 @@ def main():
                     key = ''.join(combo)
                     decrypt_output.write(decrypt(string, key) + '\n')
         else:
-            percent = 0
+            count = 0
             for combo in product(alphabets, repeat = key_length):
                 key = ''.join(combo)
                 decrypt_output.write(decrypt(string, key) + '\n')
-                percent += 1
-                print('%0.2f' %(percent/pow(26, key_length)), '%')
+                count += 1
+                percent = count/pow(26, key_length)
+                if (percent % 1):
+                    print('%0.2f' %(percent), '%')
 
                 
 
