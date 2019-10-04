@@ -1,7 +1,6 @@
 import sys
 
-
-def encrypt(string, alphabet, key):
+def encrypt(string, key):
     encryption = ""
     
     for i in range (len(string)):
@@ -27,6 +26,7 @@ def decrypt(string, key):
            decryption += chr(int(key.index(chr(ord(string[i]) - 97)) + 97))
         else:
             decryption += string[i]
+    
     return decryption
 
 def main():
@@ -41,14 +41,13 @@ def main():
     string = input_file.read()
     output = open("mono_output.txt", 'w')
     
-
     if (sys.argv[1] == '-e'):
-        encrypt_output = open("vigerene_output_encrypt.txt", "w")
+        encrypt_output = open("mono_encrypted_output.txt", "w")
         encrypt_output.write(encrypt(string, sys.argv[2]) + '\n')
         encrypt_output.close()
 
     if (sys.argv[1] == '-d'):
-        decrypt_output = open("vigerene_output_decrypt.txt", "w")
+        decrypt_output = open("mono_decrypted_output.txt", "w")
         decrypt_output.write(decrypt(string, sys.argv[2] + '\n'))
         decrypt_output.close()
 

@@ -29,9 +29,5 @@ def main():
     for i in range(len(array)):
         output.write(array[i] + ": " + str(freq[i]) + '\n')
         
-
-
-        
-
 if __name__ == "__main__":
     main()

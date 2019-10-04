@@ -39,16 +39,16 @@ def main():
     input_file = open(sys.argv[2], 'r')
     string = input_file.read()
     
-
     if (sys.argv[1] == '-e'):
-        encrypt_output = open("caesar_output_encrypt.txt", "w")
+        encrypt_output = open("caesar_encrypted_output.txt", "w")
         for i in range(26):
             encrypt_output.write(encrypt(string, i) + '\n')
         encrypt_output.close()
 
     if (sys.argv[1] == '-d'):
-        decrypt_output = open("caesar_output_encrypt.txt", "w")        
+        decrypt_output = open("caesar_decrypted_output.txt", "w")        
         for i in range(26):
+            decrypt_output.write('Key: ' + str(i) + '\n')
             decrypt_output.write(decrypt(string, i) + '\n')
         decrypt_output.close()
 
